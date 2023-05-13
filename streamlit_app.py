@@ -38,6 +38,6 @@ my_cur = my_cnx.cursor()
 my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 my_data_row = my_cur.fetchall()
 st.text("Hello from Snowflake:")
-st.text(my_data_row)
+st.dataframe(my_data_row)
 #st.text(fruityvice_normalized)
 
