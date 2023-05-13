@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import requests
+import requests as req
 
 st.title("My first sstreamlit app")
 
@@ -21,6 +21,6 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Display the table on the page.
 st.dataframe(fruits_to_show)
 
-f_res = reqest.get('https://fruityvice.com/api/fruit/watermelon')
+f_res = req.get('https://fruityvice.com/api/fruit/watermelon')
 st.text(f_res.json())
 
