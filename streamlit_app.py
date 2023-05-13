@@ -31,6 +31,9 @@ fruityvice_normalized = pd.json_normalize(f_res.json())
 
 st.dataframe(fruityvice_normalized)
 
+add_fruit = st.text_input('What fruit would you add?','Kiwi')
+st.write('The user entered ', fruit_choice)
+
 
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
