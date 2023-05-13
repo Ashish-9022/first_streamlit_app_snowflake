@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import request
+import requests
 
 st.title("My first sstreamlit app")
 
