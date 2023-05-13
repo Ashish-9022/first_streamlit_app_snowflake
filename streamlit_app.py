@@ -22,7 +22,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 st.dataframe(fruits_to_show)
 
 f_res = req.get('https://fruityvice.com/api/fruit/watermelon')
-fruityvice_normalized = pandas.json_normalize(f_res.json())
+fruityvice_normalized = pd.json_normalize(f_res.json())
 
 st.text(fruityvice_normalized)
 
