@@ -54,7 +54,7 @@ st.text("Hello from Snowflake:")
 st.dataframe(my_data_row)
 #st.text(fruityvice_normalized)
 
-if not add_fruit:
+if add_fruit:
   add_f_exr= my_cur.execute(f"insert into pc_rivery_db.public.fruit_load_list values('{add_fruit}')")
   adf_f_exe_res = my_cur.fetchall()
   st.text(adf_f_exe_res)
