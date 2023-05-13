@@ -24,5 +24,7 @@ st.dataframe(fruits_to_show)
 f_res = req.get('https://fruityvice.com/api/fruit/watermelon')
 fruityvice_normalized = pd.json_normalize(f_res.json())
 
-st.text(fruityvice_normalized)
+
+st.dataframe(fruityvice_normalized)
+#st.text(fruityvice_normalized)
 
