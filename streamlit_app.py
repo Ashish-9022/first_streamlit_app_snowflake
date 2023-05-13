@@ -31,8 +31,9 @@ fruityvice_normalized = pd.json_normalize(f_res.json())
 
 st.dataframe(fruityvice_normalized)
 
-add_fruit = st.text_input('What fruit would you add?','Kiwi')
-st.write('The user entered ', fruit_choice)
+add_fruit = st.text_input('What fruit would you add?','select')
+if add_fruit=='select':
+  st.write('The user entered ', add_fruit)
 
 
 
@@ -43,4 +44,10 @@ my_data_row = my_cur.fetchall()
 st.text("Hello from Snowflake:")
 st.dataframe(my_data_row)
 #st.text(fruityvice_normalized)
+
+if add_fruit!='select':
+  add_f_exr= my_cur.execute(f"insert into pc_rivery_db.public.fruit_load_list values('{add_fruit}')")
+  adf_f_exe_res = my_cur.fetchall()
+  st.dataframe(adf_f_exe_res)
+  st.write('The user entered ', add_fruit)
 
