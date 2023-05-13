@@ -2,6 +2,7 @@ import streamlit as st
 
 st.title("My first sstreamlit app")
 
-
-st.header('HI thus is hearer')
-st.text('this is tex')
+streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
+streamlit.text('Omega 3 & Blueberry Oatmeal')
+streamlit.text('Kale, Spinach & Rocket Smoothie')
+streamlit.text('Hard-Boiled Free-Range Egg')
