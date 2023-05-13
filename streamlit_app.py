@@ -32,7 +32,7 @@ fruityvice_normalized = pd.json_normalize(f_res.json())
 st.dataframe(fruityvice_normalized)
 
 add_fruit = st.text_input('What fruit would you add?','select')
-if add_fruit=='select':
+if add_fruit!='select':
   st.write('The user entered ', add_fruit)
 
 
@@ -49,6 +49,6 @@ if add_fruit!='select':
   add_f_exr= my_cur.execute(f"insert into pc_rivery_db.public.fruit_load_list values('{add_fruit}')")
   adf_f_exe_res = my_cur.fetchall()
   st.text(adf_f_exe_res)
-  
-  st.write('The user entered ', add_fruit)
+  if adf_f_exe_res[0][0]==1:
+    st.write('The user entered ', add_fruit)
 
