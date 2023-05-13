@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests as req
 import snowflake.connector
+from urllib.error import URLError
 
 st.title("My first sstreamlit app")
 
@@ -50,5 +51,5 @@ if add_fruit!='select':
   adf_f_exe_res = my_cur.fetchall()
   st.text(adf_f_exe_res)
   if adf_f_exe_res[0][0]==1:
-    st.write('The user entered ', add_fruit)
+    st.write('Inserted - ', add_fruit)
 
