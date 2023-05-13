@@ -35,7 +35,7 @@ st.dataframe(fruityvice_normalized)
 try:
   add_fruit = st.text_input('What fruit would you add?')
   if not add_fruit:
-    st.erroe('Please inter fruit name')
+    st.error('Please inter fruit name')
   else:
     f_res = req.get(f'https://fruityvice.com/api/fruit/{add_fruit}')
     fruityvice_normalized = pd.json_normalize(f_res.json())
