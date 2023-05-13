@@ -51,7 +51,8 @@ if st.button("Get Fruit data"):
   my_data_row = my_cur.fetchall()
   st.dataframe(my_data_row)
 
-if add_fruit:
+  
+if st.button(f'Add {add_fruit} to DB'):
   add_f_exr= my_cur.execute(f"insert into pc_rivery_db.public.fruit_load_list values('{add_fruit}')")
   adf_f_exe_res = my_cur.fetchall()
   st.text(adf_f_exe_res)
