@@ -48,6 +48,7 @@ st.dataframe(my_data_row)
 if add_fruit!='select':
   add_f_exr= my_cur.execute(f"insert into pc_rivery_db.public.fruit_load_list values('{add_fruit}')")
   adf_f_exe_res = my_cur.fetchall()
-  st.dataframe(adf_f_exe_res)
+  st.text(adf_f_exe_res)
+  
   st.write('The user entered ', add_fruit)
 
