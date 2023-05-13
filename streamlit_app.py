@@ -45,14 +45,12 @@ except URLError as err:
     
 
 
-
-my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
-my_data_row = my_cur.fetchall()
-st.text("Hello from Snowflake:")
-st.dataframe(my_data_row)
-#st.text(fruityvice_normalized)
+if st.button("Get Fruit data"):
+  my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
+  my_cur = my_cnx.cursor()
+  my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
+  my_data_row = my_cur.fetchall()
+  st.dataframe(my_data_row)
 
 if add_fruit:
   add_f_exr= my_cur.execute(f"insert into pc_rivery_db.public.fruit_load_list values('{add_fruit}')")
@@ -60,4 +58,6 @@ if add_fruit:
   st.text(adf_f_exe_res)
   if adf_f_exe_res[0][0]==1:
     st.write('Inserted - ', add_fruit)
+    
+ 
 
